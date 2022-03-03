@@ -4,7 +4,7 @@ import "./SortitionSumTreeFactory.sol";
 
 /**
  *  @title ExposedSortitionSumTreeFactory
- *  @author *Enrique Piqueras - <epiquerass@gmail.com>, ShotaroNowhere
+ *  @author *Enrique Piqueras - <epiquerass@gmail.com>, @shotaronowhere
  *  @dev Exposed version of SortitionSumTreeFactory for testing.
  */
 contract ExposedSortitionSumTreeFactory {
