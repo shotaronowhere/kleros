@@ -592,7 +592,7 @@ contract KlerosLiquid is TokenController, Arbitrator {
     }
 
     /** @dev Repartitions tokens and ETH for a specified appeal in a specified dispute. Can be called in parts.
-     *  `O(i + u * n * (n + p * log_k(j)))` where
+     *  `O(i + u * n * (p * log_k(j)))` where
      *  `i` is the number of iterations to run,
      *  `u` is the number of jurors that need to be unstaked,
      *  `n` is the maximum number of subcourts one of these jurors has staked in,
