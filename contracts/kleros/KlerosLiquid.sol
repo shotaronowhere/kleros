@@ -650,7 +650,7 @@ contract KlerosLiquid is TokenController, Arbitrator {
 
                     // Unstake juror if his penalty made balance less than his total stake or if he lost due to inactivity.
                     if (pinakion.balanceOf(vote.account) < jurors[vote.account].stakedTokens || !vote.voted)
-                        for (uint j = 0; j < jurors[vote.account].subcourtIDs.length; j++)
+                        for (int j = jurors[vote.account].subcourtIDs.length - 1; j >= 0; j--)
                             _setStake(vote.account, jurors[vote.account].subcourtIDs[j], 0);
 
                 }
@@ -880,7 +880,7 @@ contract KlerosLiquid is TokenController, Arbitrator {
         // Update juror's records.
         juror.stakedTokens = newTotalStake;
         if (_stake == 0) {
-            for (uint i = 0; i < juror.subcourtIDs.length; i++)
+            for (int i = juror.subcourtIDs.length - 1; i >= 0; i--)
                 if (juror.subcourtIDs[i] == _subcourtID) {
                     juror.subcourtIDs[i] = juror.subcourtIDs[juror.subcourtIDs.length - 1];
                     juror.subcourtIDs.length--;
